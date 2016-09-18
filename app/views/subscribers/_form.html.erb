@@ -1,0 +1,9 @@
+<%- if session[:subscribed] %>
+    <p class="subscribed-successfully">Ευχαριστούμε θα σας ειδοποιήσουμε σύντομα.</p>
+<% else %>
+    <%= form_tag '/subscribers', method: :post, remote: true, id: 'subscriber-form' do %>
+        <p class="validation-error"><%= @error %></p>
+        <%= text_field_tag 'email', nil, placeholder: 'test@domain.gr', class: 'u-full-width', id: 'exampleEmailInput' %>
+        <%= submit_tag 'Εγγραφειτε', class: 'u-pull-right button-primary' %>
+    <% end %>
+<% end %>
