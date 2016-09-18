@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: wolfdog_production
-  username: wolfdog
-  password: <%= ENV['WOLFDOG_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
